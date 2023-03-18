@@ -1,10 +1,27 @@
-import react, { Component } from "react"
+import React, { Component } from 'react';
 
-class Welcome extends Component{
-    render(){
-        return <h1>welcome {this.props.name}</h1>
-    }
+class Message extends Component {
+  constructor() {
+    super();
+    this.state = {
+      message: 'Hello World!'
+    };
+  }
 
+  changeMessage = () => {
+    this.setState({
+      message: 'Goodbye World!'
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+        <button onClick={this.changeMessage}>Change Message</button>
+      </div>
+    );
+  }
 }
 
-export default Welcome
+export default Message;
